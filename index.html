@@ -1,0 +1,182 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Fun Zoom Game Night</title>
+  <meta name="description" content="Join our Zoom-based party game. Register fast, pay securely, and compete to win the prize pot!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    .glass { backdrop-filter: blur(10px); background: rgba(255,255,255,.7); }
+    .input { @apply w-full rounded-xl border border-gray-300 p-3 focus:outline-none focus:ring-2 focus:ring-indigo-500; }
+    .label { @apply text-sm font-semibold text-gray-700; }
+  </style>
+</head>
+<body class="bg-gradient-to-br from-indigo-50 to-sky-50 text-gray-900">
+  <!-- Header -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur border-b">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-2 font-bold text-xl"><span class="inline-block h-8 w-8 rounded-2xl bg-indigo-600"></span> Fun Zoom Game</a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#how" class="hover:text-indigo-600">How it works</a>
+        <a href="#register" class="hover:text-indigo-600">Register</a>
+        <a href="#pay" class="hover:text-indigo-600 font-semibold">Pay</a>
+      </nav>
+      <a href="#pay" class="md:inline-flex hidden bg-indigo-600 text-white px-4 py-2 rounded-xl shadow hover:bg-indigo-700">Pay Entry Fee</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative">
+    <div class="max-w-6xl mx-auto px-4 pt-12 pb-6 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">Play, Laugh & Win 💸 — All on Zoom</h1>
+        <p class="mt-4 text-lg text-gray-700">A fast-paced, family-friendly game session on Zoom. Register below, pay the entry fee securely, and you’re in. Winner takes the prize pot!</p>
+        <div class="mt-6 flex gap-3">
+          <a href="#register" class="bg-indigo-600 text-white px-5 py-3 rounded-xl shadow hover:bg-indigo-700">Quick Register</a>
+          <a href="#pay" class="bg-white border px-5 py-3 rounded-xl hover:bg-gray-50">Pay Entry Fee</a>
+        </div>
+        <p class="mt-3 text-sm text-gray-600">Next game: <strong>Saturday, 7:00 PM ET</strong> • Zoom link sent after payment.</p>
+      </div>
+      <div class="relative">
+        <!-- Image grid -->
+        <div class="grid grid-cols-3 gap-3">
+          <img alt="Friends laughing on a video call" class="rounded-2xl shadow object-cover h-40 w-full" src="https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800&auto=format&fit=crop" />
+          <img alt="People celebrating with confetti" class="rounded-2xl shadow object-cover h-40 w-full" src="https://images.unsplash.com/photo-1511988617509-a57c8a288659?q=80&w=800&auto=format&fit=crop" />
+          <img alt="Winner holding a trophy" class="rounded-2xl shadow object-cover h-40 w-full" src="https://images.unsplash.com/photo-1521417531039-3388f1dc9b45?q=80&w=800&auto=format&fit=crop" />
+          <img alt="Team high-five on call" class="rounded-2xl shadow object-cover h-40 w-full col-span-2" src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=1000&auto=format&fit=crop" />
+          <img alt="Smiling player with headset" class="rounded-2xl shadow object-cover h-40 w-full" src="https://images.unsplash.com/photo-1544717305-9b805be2f7b1?q=80&w=800&auto=format&fit=crop" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how" class="py-12">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-3 gap-6">
+      <div class="glass rounded-2xl p-6 shadow">
+        <div class="text-2xl">1️⃣</div>
+        <h3 class="mt-2 font-bold text-xl">Register</h3>
+        <p class="text-gray-700 mt-2">Tell us who you are in 30 seconds using the form below.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 shadow">
+        <div class="text-2xl">2️⃣</div>
+        <h3 class="mt-2 font-bold text-xl">Pay Securely</h3>
+        <p class="text-gray-700 mt-2">Pay the entry fee on a PCI-compliant payment page powered by Stripe.</p>
+      </div>
+      <div class="glass rounded-2xl p-6 shadow">
+        <div class="text-2xl">3️⃣</div>
+        <h3 class="mt-2 font-bold text-xl">Join & Win</h3>
+        <p class="text-gray-700 mt-2">Receive the Zoom link by email after payment. Compete to win the prize pot!</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Registration -->
+  <section id="register" class="py-12 bg-white">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-start">
+      <div>
+        <h2 class="text-3xl font-extrabold">Quick Registration</h2>
+        <p class="text-gray-700 mt-2">Fill this in first. If you already paid before, use the same email so we can match your payment automatically.</p>
+        <form id="regForm" class="mt-6 grid grid-cols-1 gap-4" action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+          <div>
+            <label class="label" for="name">Full name</label>
+            <input id="name" name="name" required class="input" />
+          </div>
+          <div>
+            <label class="label" for="email">Email</label>
+            <input id="email" name="email" type="email" required class="input" />
+          </div>
+          <div>
+            <label class="label" for="phone">Phone</label>
+            <input id="phone" name="phone" type="tel" inputmode="tel" pattern="[+0-9\-() ]+" placeholder="+1 647 555 0123" class="input" />
+          </div>
+          <div>
+            <label class="label" for="hobbies">Hobbies</label>
+            <input id="hobbies" name="hobbies" class="input" placeholder="Board games, quizzes, music…" />
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label class="label" for="city">City</label>
+              <input id="city" name="city" required class="input" />
+            </div>
+            <div>
+              <label class="label" for="country">Country</label>
+              <input id="country" name="country" required class="input" />
+            </div>
+          </div>
+          <div class="flex items-center gap-3 mt-1">
+            <input id="consent" type="checkbox" required class="h-4 w-4" />
+            <label for="consent" class="text-sm text-gray-700">I agree to receive the Zoom link & updates for this event.</label>
+          </div>
+          <button class="mt-2 bg-gray-900 text-white px-5 py-3 rounded-xl hover:bg-black" type="submit">Submit Registration</button>
+          <p class="text-xs text-gray-500">Your info is used only for this event. No spam.</p>
+        </form>
+      </div>
+
+      <div id="pay" class="glass rounded-2xl p-6 shadow sticky top-24">
+        <h3 class="text-2xl font-bold">Pay Entry Fee</h3>
+        <p class="text-gray-700 mt-2">Secure payment is handled by Stripe on their hosted checkout page.</p>
+        <ul class="mt-3 text-sm text-gray-700 list-disc list-inside">
+          <li>Total due: <strong>$XX.XX</strong></li>
+          <li>Use the <strong>same email</strong> you registered with.</li>
+          <li>Non-refundable if you miss the start time.</li>
+        </ul>
+        <a href="https://buy.stripe.com/YOUR_PAYMENT_LINK" class="mt-5 inline-flex items-center justify-center w-full bg-indigo-600 text-white px-5 py-3 rounded-xl shadow hover:bg-indigo-700">Pay Now</a>
+        <p class="text-xs text-gray-500 mt-2">After payment, you’ll be redirected to a confirmation page and receive the Zoom link by email.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-12">
+    <div class="max-w-3xl mx-auto px-4">
+      <h2 class="text-3xl font-extrabold">FAQ</h2>
+      <div class="mt-6 space-y-4">
+        <details class="p-4 bg-white rounded-2xl shadow">
+          <summary class="font-semibold">How do I get the Zoom link?</summary>
+          <p class="mt-2 text-gray-700">We email it automatically after successful payment (to the email you registered with).</p>
+        </details>
+        <details class="p-4 bg-white rounded-2xl shadow">
+          <summary class="font-semibold">Is payment secure?</summary>
+          <p class="mt-2 text-gray-700">Yes. We never see your card details. Stripe, a PCI‑compliant provider, handles the checkout.</p>
+        </details>
+        <details class="p-4 bg-white rounded-2xl shadow">
+          <summary class="font-semibold">How is the winner decided?</summary>
+          <p class="mt-2 text-gray-700">The host tracks scores during the game. In a tie, we run a quick tiebreaker round.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t">
+    <div class="max-w-6xl mx-auto px-4 py-10 text-sm text-gray-600 flex flex-col md:flex-row gap-3 md:items-center md:justify-between">
+      <p>© <span id="year"></span> Fun Zoom Game. All rights reserved.</p>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-gray-900">Terms</a>
+        <a href="#" class="hover:text-gray-900">Privacy</a>
+        <a href="#" class="hover:text-gray-900">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Update year
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Basic front-end validation example (extra safety — HTML5 handles most)
+    document.getElementById('regForm').addEventListener('submit', function(e) {
+      const email = document.getElementById('email').value.trim();
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        e.preventDefault();
+        alert('Please enter a valid email address.');
+      }
+    });
+  </script>
+</body>
+</html>
